@@ -1,9 +1,12 @@
 import './App.css';
-import { Avatar, Wrap, Image } from '@chakra-ui/react';
+import { useMediaQuery } from 'react-responsive';
 import go from './Untitled.jpg';
-import { Grid, GridItem, Flex, Spacer, Box, Text, Center, Heading, IconButton, Link, Button, FormControl, Input, Textarea} from '@chakra-ui/react';
+import { HStack, Image, Flex, Spacer, Box, Text, Center, Heading, IconButton, Link, Button, FormControl, Input, Textarea} from '@chakra-ui/react';
 import { Icon } from '@chakra-ui/react'
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
+
+
+
 
 function LinkedIn() {
   return <Icon as={AiFillLinkedin} />
@@ -15,62 +18,35 @@ function Github() {
 
 
 function App() {
-  return (
 
-      <Box>
-        <Flex color='gray' h='50px' align='center' bg='#0c0d0d' w='100%' pos='fixed' >
-          <Box ml='25px'>
-            <Text>About</Text>
-          </Box>
-          <Box ml='25px'>
-            <Text>Twitter</Text>
-          </Box>
-          <Box ml='25px'>
-            <Text>LinkedIn</Text>
-          </Box>
+  const isNotDesktop = useMediaQuery({ query: '(max-Width: 800px)' });
+  const isDesktop = useMediaQuery({ query: '(min-Width: 801px)' });
+
+  return (
+      
+      <Box >
+
+        <Flex color='gray' h='50px' align='center' bg='#0c0d0d' w='100%' pos='fixed' zIndex='1'>
+          <Link ml='25px'>About</Link>
+          <Link ml='25px' href='https://www.linkedin.com/in/tob%C3%ADas/'>LinkedIn</Link>
+          <Link ml='25px' href='https://github.com/juantobiasdl7'>Github</Link>
         </Flex>
 
-        <Flex w='100%' wrap='wrap' pt='50px'>
-          <Box w='100%' h='300px' bg='black'>
-            <Flex w='100%' h='100%' justify='center' align='center'>
+        <Flex w='100%' wrap='wrap' pt='100px' bg='black'>
+          <Box w='100%' h='300px' pb='50px'>
+            <Flex w='100%' h='100%' justify='center' align='center' direction='column'>
               <Image
                     borderRadius='full'
                     boxSize='250px'
                     src= {go}
                     alt='Tobías De La Cruz'
               />
-            </Flex>
-          </Box>
-          <Box w='100%' h='fit-content' bg='#0c0d0d' color='gray' pb='10px'>
-            <Heading as='h1' size='lg' noOfLines={1} ml='25%' mt='20px'>Hi there!</Heading>
-             <Text w='50%' ml='25%'>My name is Tobías. I'm a Mexican technology generalist, with recent experience as a Project Manager, remote Software Development teams and community building activities 🧑‍💻
-             I work as PM at Umvel. Highlights of my career include Aeroméxico, Global Hitss, Optimen... 🚀</Text>
-          </Box>
-          <Box w='100%' h='fit-content' bg='black' color='gray' pb='10px'>
-          <FormControl>
-            <Flex direction='column' align='center'>
-              <Center >
-                <Text mt='12px' mb='20px' fontSize='4xl'>Contact me</Text>
-              </Center>
-              <Input w='80%' mb='20px' placeholder='Name' />
-              <Input w='80%' mb='20px' type='email' placeholder='Email' />
-              <Input w='80%' mb='20px' placeholder='Subject' />
-              <Textarea w='80%' placeholder='Message' h='89%' />
-                <Button
-                mt={4}
-                color='black'
-                variant='solid'
-                type='submit'
-              >
-                  Submit
-              </Button>
-              <Box pt='10px' w='40%'>
-                <Flex>
+              <Box pt='20px' w={['30%', null, '15%']}>
+                <Flex >
                   <Link href='https://www.linkedin.com/in/tob%C3%ADas/'>
                     <IconButton
                       variant='outline'
-                      colorScheme='white'
-                      aria-label='Call Sage'
+                      color='gray'
                       fontSize='20px'
                       icon={<LinkedIn/>}
                     />
@@ -79,8 +55,7 @@ function App() {
                   <Link href='https://github.com/juantobiasdl7'>
                     <IconButton
                       variant='outline'
-                      colorScheme='white'
-                      aria-label='Call Sage'
+                      color='gray'
                       fontSize='20px'
                       href=''
                       icon={<Github/>}
@@ -88,10 +63,76 @@ function App() {
                   </Link>
                 </Flex>
               </Box>
+            </Flex>
+          </Box>
+          <Box w='100%' h='fit-content' bg='#0c0d0d' color='gray' pb='40px'>
+            <Heading as='h1' size='lg' noOfLines={1} ml={['25%',null,'15%']} mt='20px'>Hi there!</Heading>
+             <Text w={['50%',null,'70%']} ml={['25%',null,'15%']}>My name is Tobías. I'm a Mexican technology generalist, with recent experience as a Project Manager, remote Software Development teams and community building activities 🧑‍💻
+             I work as PM at Umvel. Highlights of my career include Aeroméxico, Global Hitss, Optimen... 🚀</Text>
+          </Box>
+          
+          { isNotDesktop && <Box w='100%' h='fit-content' bg='black' color='gray'  >
+          <FormControl>
+            <Flex direction='column' align='center'>
+              <Center >
+                <Text mt='12px' mb='20px' fontSize='4xl'>Contact me</Text>
+              </Center>
+              <Input w={{base:'80%', sm:'80%'}} mb='20px' placeholder='Name' />
+              <Input w='80%' mb='20px' type='email' placeholder='Email' />
+              <Input w='80%' mb='20px' placeholder='Subject' />
+              <Textarea w='80%' placeholder='Message' h='89%' />
+                <Button
+                mt={4}
+                color='black'
+                variant='solid'
+                type='submit'
+                mb='50px'
+              >
+                  Submit
+              </Button>
               </Flex>
             </FormControl>
-
           </Box>
+          }
+
+          { isDesktop && 
+          <Box w='100%' h='fit-content' bg='black' color='gray' pb='40px' >
+          <FormControl>
+            <Flex direction='column' align='center'>
+              <Box>
+                <Center >
+                  <Text mt='12px' mb='20px' fontSize='4xl'>Contact me</Text>
+                </Center>
+              </Box>
+              <Box w='80%'>
+                <Flex justify='center'>
+                  <Box w='40%'>
+                    <Flex direction='column' align='center'>
+                      <Input w='90%' mb='20px' placeholder='Name' />
+                      <Input w='90%' mb='20px' type='email' placeholder='Email' />
+                      <Input w='90%' mb='20px' placeholder='Subject' />
+                    </Flex>
+                  </Box>
+                  <Box w='60%'>
+                    <Textarea w='100%' placeholder='Message' h='89%' />
+                  </Box>
+                </Flex>
+              </Box>
+              <Box>
+                <Button
+                mt={4}
+                color='black'
+                variant='solid'
+                type='submit'
+              >
+                  Submit
+              </Button>
+              </Box>
+              </Flex>
+            </FormControl>
+          </Box>
+          }
+
           <Box w='100%' h='50px' bg='#0c0d0d' color='gray'>
             <Center >
               <Text mt='12px' fontSize='sm'>Copyright © 2022, Tobías De La Cruz.  </Text>
