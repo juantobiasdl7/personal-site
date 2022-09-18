@@ -108,7 +108,7 @@ function App() {
                           </Flex>
                         </Box>
                         <Box>
-                          <textarea placeholder="Message" name="message"></textarea>
+                          <textarea placeholder="Message" name="message" style={{height: "100%"}}></textarea>
                         </Box>
                       </Flex>
                     </Center>
