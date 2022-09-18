@@ -4,6 +4,7 @@ import go from './Untitled.jpg';
 import { HStack, Image, Flex, Spacer, Box, Text, Center, Heading, IconButton, Link, Button, FormControl, Input, Textarea} from '@chakra-ui/react';
 import { Icon } from '@chakra-ui/react'
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
+import { useState } from 'react';
 
 
 
@@ -21,6 +22,11 @@ function App() {
 
   const isNotDesktop = useMediaQuery({ query: '(max-Width: 800px)' });
   const isDesktop = useMediaQuery({ query: '(min-Width: 801px)' });
+
+  const[name,setName] = useState('');
+  const[email,setEmail] = useState('');
+  const[subject,setSubject] = useState('');
+  const[text,setText] = useState('');
 
   return (
       
@@ -77,10 +83,11 @@ function App() {
               <Center >
                 <Text mt='12px' mb='20px' fontSize='4xl'>Contact me</Text>
               </Center>
-              <Input w={{base:'80%', sm:'80%'}} mb='20px' placeholder='Name' />
-              <Input w='80%' mb='20px' type='email' placeholder='Email' />
-              <Input w='80%' mb='20px' placeholder='Subject' />
-              <Textarea w='80%' placeholder='Message' h='89%' />
+              <input type="hidden" name="form-name" value="contact" />
+              <Input w={{base:'80%', sm:'80%'}} mb='20px' placeholder='Name' name='name' />
+              <Input w='80%' mb='20px' type='email' placeholder='Email' name='email' />
+              <Input w='80%' mb='20px' placeholder='Subject' name='subject' />
+              <Textarea w='80%' placeholder='Message' h='89%' name='message' />
                 <Button
                 mt={4}
                 color='black'
@@ -133,6 +140,16 @@ function App() {
           </Box>
           }
 
+          {/* <Box w='100%' h='fit-content' bg='black' color='gray'  >
+          <form>
+            <label for="fname">First name:</label><br/>
+            <input type="text" id="fname" name="fname" value="John"/><br/>
+            <label for="lname">Last name:</label><br/>
+            <input type="text" id="lname" name="lname" value="Doe"/>
+            <input type="submit" value="Submit"/>
+          </form>
+          </Box> */}
+          
           <Box w='100%' h='50px' bg='#0c0d0d' color='gray'>
             <Center >
               <Text mt='12px' fontSize='sm'>Copyright © 2022, Tobías De La Cruz.  </Text>
