@@ -74,14 +74,14 @@ function App() {
                 </Center>
             <div>
               <form name="contact" method="post" autocomplete="off">
-                <Flex direction='column' align='center' gap='3' w='100%'>
+                <Flex direction='column' align='center' gap='3' w='100%' pb='20px'>
                   <input type="hidden" name="form-name" value="contact" />
 
                   <input placeholder="Name" type="text" name="name" autocomplete="off"/>
                   <input placeholder="Email" type="email" name="email" autocomplete="off"/>
                   <input placeholder="Subject" type="text" name="subject"/>
                   <textarea placeholder="Message" name="message"></textarea>
-                  <button type="submit">Send</button>
+                  <button type="submit" className='hello'>Send</button>
                 </Flex>
               </form>
             </div>
