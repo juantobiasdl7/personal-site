@@ -7,8 +7,6 @@ import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import { useState } from 'react';
 
 
-
-
 function LinkedIn() {
   return <Icon as={AiFillLinkedin} />
 }
@@ -24,7 +22,7 @@ function App() {
   const isDesktop = useMediaQuery({ query: '(min-Width: 801px)' });
 
   return (
-      
+
       <Box >
 
         <Flex color='gray' h='50px' align='center' bg='#0c0d0d' w='100%' pos='fixed' zIndex='1'>
@@ -71,23 +69,26 @@ function App() {
              <Text w={['50%',null,'70%']} ml={['25%',null,'15%']}>My name is Tobías. I'm a Mexican technology generalist, with recent experience as a Project Manager, remote Software Development teams and community building activities 🧑‍💻
              I work as PM at Umvel. Highlights of my career include Aeroméxico, Global Hitss, Optimen... 🚀</Text>
           </Box>
+          <Box w='100%' h='fit-content' bg='black' color='gray'  >
+            <Flex direction='column' align='center'>
+                <Center >
+                  <Text mt='12px' mb='20px' fontSize='4xl'>Contact me</Text>
+                </Center>
+            <div>
+              <form name="contact" method="post">
+                <Flex direction='column' align='center' gap='3' w='100%'>
+                  <input type="hidden" name="form-name" value="contact" />
 
-          <form name="contact" method="post">
-          <input type="hidden" name="form-name" value="contact" />
-          <p>
-            <label>Your Name: <input type="text" name="name"/></label>
-          </p>
-          <p>
-            <label>Your Email: <input type="email" name="email"/></label>
-          </p>
-          <p>
-            <label>Message: <textarea name="message"></textarea></label>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-          </p>
-          </form>
-
+                  <input placeholder="Name" type="text" name="name"/>
+                  <input placeholder="Email" type="email" name="email"/>
+                  <input placeholder="Subject" type="text" name="subject"/>
+                  <textarea placeholder="Message" name="message"></textarea>
+                  <button type="submit">Send</button>
+                </Flex>
+              </form>
+            </div>
+            </Flex>
+          </Box>
           
           {/* { isNotDesktop && <Box w='100%' h='fit-content' bg='black' color='gray'  >
           <FormControl>

@@ -2,6 +2,41 @@
   text-align: center;
 }
 
+div {
+  width: 100%;
+}
+
+input {
+  background-color:transparent;
+  width: 80%;
+  height: 40px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  text-indent: 15px;
+}
+
+input:focus { 
+  outline: none !important;
+}
+
+textarea {
+  background-color:transparent;
+  width: 80%;
+  border: 2px solid gray;
+  border-radius: 10px;
+  height: 80px;
+  text-indent: 15px;
+}
+
+textarea:focus { 
+  outline: none !important;
+}
+
+.form-font {
+  color: #333;
+  font: 100% / normal sans-serif;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
