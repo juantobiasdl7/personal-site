@@ -6,7 +6,6 @@ import { Icon } from '@chakra-ui/react'
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import { useState } from 'react';
 
-
 function LinkedIn() {
   return <Icon as={AiFillLinkedin} />
 }
@@ -14,7 +13,6 @@ function LinkedIn() {
 function Github() {
   return <Icon as={AiFillGithub} />
 }
-
 
 function App() {
 
@@ -31,7 +29,7 @@ function App() {
           <Link ml='25px' href='https://github.com/juantobiasdl7'>Github</Link>
         </Flex>
 
-        <Flex w='100%' wrap='wrap' pt='100px' bg='black'>
+        <Flex w='100%' wrap='wrap' pt='120px' bg='black'>
           <Box w='100%' h='300px' pb='50px'>
             <Flex w='100%' h='100%' justify='center' align='center' direction='column'>
               <Image
@@ -64,23 +62,23 @@ function App() {
               </Box>
             </Flex>
           </Box>
-          <Box w='100%' h='fit-content' bg='#0c0d0d' color='gray' pb='40px'>
-            <Heading as='h1' size='lg' noOfLines={1} ml={['25%',null,'15%']} mt='20px'>Hi there!</Heading>
+          <Box w='100%' h='180px' bg='#0c0d0d' color='gray' pb='40px'>
+            <Heading as='h1' size='lg' noOfLines={1} ml={['25%',null,'15%']} mt='20px' h='60px'>Hi there!</Heading>
              <Text w={['50%',null,'70%']} ml={['25%',null,'15%']}>My name is Tobías. I'm a Mexican technology generalist, with recent experience as a Project Manager, remote Software Development teams and community building activities 🧑‍💻
              I work as PM at Umvel. Highlights of my career include Aeroméxico, Global Hitss, Optimen... 🚀</Text>
           </Box>
-          <Box w='100%' h='fit-content' bg='black' color='gray'  >
+          {isNotDesktop && <Box w='100%' h='fit-content' bg='black' color='gray'  >
             <Flex direction='column' align='center'>
                 <Center >
                   <Text mt='12px' mb='20px' fontSize='4xl'>Contact me</Text>
                 </Center>
             <div>
-              <form name="contact" method="post">
+              <form name="contact" method="post" autocomplete="off">
                 <Flex direction='column' align='center' gap='3' w='100%'>
                   <input type="hidden" name="form-name" value="contact" />
 
-                  <input placeholder="Name" type="text" name="name"/>
-                  <input placeholder="Email" type="email" name="email"/>
+                  <input placeholder="Name" type="text" name="name" autocomplete="off"/>
+                  <input placeholder="Email" type="email" name="email" autocomplete="off"/>
                   <input placeholder="Subject" type="text" name="subject"/>
                   <textarea placeholder="Message" name="message"></textarea>
                   <button type="submit">Send</button>
@@ -88,80 +86,44 @@ function App() {
               </form>
             </div>
             </Flex>
-          </Box>
-          
-          {/* { isNotDesktop && <Box w='100%' h='fit-content' bg='black' color='gray'  >
-          <FormControl>
-            <Flex direction='column' align='center'>
-              <Center >
-                <Text mt='12px' mb='20px' fontSize='4xl'>Contact me</Text>
-              </Center>
-              <input type="hidden" name="form-name" value="contact" />
-              <Input w={{base:'80%', sm:'80%'}} mb='20px' placeholder='Name' name='name' />
-              <Input w='80%' mb='20px' type='email' placeholder='Email' name='email' />
-              <Input w='80%' mb='20px' placeholder='Subject' name='subject' />
-              <Textarea w='80%' placeholder='Message' h='89%' name='message' />
-                <Button
-                mt={4}
-                color='black'
-                variant='solid'
-                type='submit'
-                mb='50px'
-              >
-                  Submit
-              </Button>
-              </Flex>
-            </FormControl>
-          </Box>
-          }
+          </Box>}
 
-          { isDesktop && 
-          <Box w='100%' h='fit-content' bg='black' color='gray' pb='40px' >
-          <FormControl>
-            <Flex direction='column' align='center'>
-              <Box>
+          {isDesktop && <Box w='100%' h='fit-content' bg='black' color='gray'  >
+            <Flex direction='column' align='center' h='350px' justify='center'>
                 <Center >
                   <Text mt='12px' mb='20px' fontSize='4xl'>Contact me</Text>
                 </Center>
-              </Box>
-              <Box w='80%'>
-                <Flex justify='center'>
-                  <Box w='40%'>
-                    <Flex direction='column' align='center'>
-                      <Input w='90%' mb='20px' placeholder='Name' />
-                      <Input w='90%' mb='20px' type='email' placeholder='Email' />
-                      <Input w='90%' mb='20px' placeholder='Subject' />
-                    </Flex>
+            <div>
+              <form name="contact" method="post" autocomplete="off">
+                <Flex direction='column' align='center' gap='3' w='100%'>
+                  <Box>
+                    <Center>
+                      <Flex  w='70%'>
+                        <Box>
+                          <Flex direction='column' align='center' gap='3'>
+                            <input type="hidden" name="form-name" value="contact" />
+                            <input placeholder="Name" type="text" name="name" autocomplete="off"/>
+                            <input placeholder="Email" type="email" name="email" autocomplete="off"/>
+                            <input placeholder="Subject" type="text" name="subject"/>
+                          </Flex>
+                        </Box>
+                        <Box>
+                          <textarea placeholder="Message" name="message"></textarea>
+                        </Box>
+                      </Flex>
+                    </Center>
                   </Box>
-                  <Box w='60%'>
-                    <Textarea w='100%' placeholder='Message' h='89%' />
+                  <Box pt='20px'>
+                    <Center>
+                      <button type="submit" className='hello'>Send</button>
+                    </Center>
                   </Box>
                 </Flex>
-              </Box>
-              <Box>
-                <Button
-                mt={4}
-                color='black'
-                variant='solid'
-                type='submit'
-              >
-                  Submit
-              </Button>
-              </Box>
-              </Flex>
-            </FormControl>
+              </form>
+            </div>
+            </Flex>
           </Box>
-          } */}
-
-          {/* <Box w='100%' h='fit-content' bg='black' color='gray'  >
-          <form>
-            <label for="fname">First name:</label><br/>
-            <input type="text" id="fname" name="fname" value="John"/><br/>
-            <label for="lname">Last name:</label><br/>
-            <input type="text" id="lname" name="lname" value="Doe"/>
-            <input type="submit" value="Submit"/>
-          </form>
-          </Box> */}
+          } 
           
           <Box w='100%' h='50px' bg='#0c0d0d' color='gray'>
             <Center >
