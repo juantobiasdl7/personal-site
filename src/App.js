@@ -98,7 +98,7 @@ function App() {
                 <Flex direction='column' align='center' gap='3' w='100%'>
                   <Box>
                     <Center>
-                      <Flex  w='70%'>
+                      <Flex  w='80%'>
                         <Box>
                           <Flex direction='column' align='center' gap='3'>
                             <input type="hidden" name="form-name" value="contact" />
