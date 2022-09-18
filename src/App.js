@@ -23,11 +23,6 @@ function App() {
   const isNotDesktop = useMediaQuery({ query: '(max-Width: 800px)' });
   const isDesktop = useMediaQuery({ query: '(min-Width: 801px)' });
 
-  const[name,setName] = useState('');
-  const[email,setEmail] = useState('');
-  const[subject,setSubject] = useState('');
-  const[text,setText] = useState('');
-
   return (
       
       <Box >
@@ -76,8 +71,25 @@ function App() {
              <Text w={['50%',null,'70%']} ml={['25%',null,'15%']}>My name is Tobías. I'm a Mexican technology generalist, with recent experience as a Project Manager, remote Software Development teams and community building activities 🧑‍💻
              I work as PM at Umvel. Highlights of my career include Aeroméxico, Global Hitss, Optimen... 🚀</Text>
           </Box>
+
+          <form name="contact" method="post">
+          <input type="hidden" name="form-name" value="contact" />
+          <p>
+            <label>Your Name: <input type="text" name="name"/></label>
+          </p>
+          <p>
+            <label>Your Email: <input type="email" name="email"/></label>
+          </p>
+          <p>
+            <label>Message: <textarea name="message"></textarea></label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+          </form>
+
           
-          { isNotDesktop && <Box w='100%' h='fit-content' bg='black' color='gray'  >
+          {/* { isNotDesktop && <Box w='100%' h='fit-content' bg='black' color='gray'  >
           <FormControl>
             <Flex direction='column' align='center'>
               <Center >
@@ -138,7 +150,7 @@ function App() {
               </Flex>
             </FormControl>
           </Box>
-          }
+          } */}
 
           {/* <Box w='100%' h='fit-content' bg='black' color='gray'  >
           <form>
