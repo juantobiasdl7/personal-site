@@ -62,7 +62,7 @@ function App() {
               </Box>
             </Flex>
           </Box>
-          <Box w='100%' h='180px' bg='#0c0d0d' color='gray' pb='40px'>
+          <Box w='100%' h='fit-content' bg='#0c0d0d' color='gray' pb='40px'>
             <Heading as='h1' size='lg' noOfLines={1} ml={['25%',null,'15%']} mt='20px' h='60px'>Hi there!</Heading>
              <Text w={['50%',null,'70%']} ml={['25%',null,'15%']}>My name is Tobías. I'm a Mexican technology generalist, with recent experience as a Project Manager, remote Software Development teams and community building activities 🧑‍💻
              I work as PM at Umvel. Highlights of my career include Aeroméxico, Global Hitss, Optimen... 🚀</Text>
