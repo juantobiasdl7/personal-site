@@ -1,7 +1,7 @@
 import './App.css';
 import { useMediaQuery } from 'react-responsive';
 import go from './Untitled.jpg';
-import { HStack, Image, Flex, Spacer, Box, Text, Center, Heading, IconButton, Link, Button, FormControl, Input, Textarea} from '@chakra-ui/react';
+import { HStack, Image, Flex, Spacer, Box, Text, Center, Heading, IconButton, Link} from '@chakra-ui/react';
 import { Icon } from '@chakra-ui/react'
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import { useState } from 'react';
@@ -24,7 +24,6 @@ function App() {
       <Box >
 
         <Flex color='gray' h='50px' align='center' bg='#0c0d0d' w='100%' pos='fixed' zIndex='1'>
-          <Link ml='25px'>About</Link>
           <Link ml='25px' href='https://www.linkedin.com/in/tob%C3%ADas/'>LinkedIn</Link>
           <Link ml='25px' href='https://github.com/juantobiasdl7'>Github</Link>
         </Flex>
@@ -64,8 +63,10 @@ function App() {
           </Box>
           <Box w='100%' h='fit-content' bg='#0c0d0d' color='gray' pb='40px'>
             <Heading as='h1' size='lg' noOfLines={1} ml={['25%',null,'15%']} mt='20px' h='60px'>Hi there!</Heading>
-             <Text w={['50%',null,'70%']} ml={['25%',null,'15%']}>My name is Tobías. I'm a Mexican technology generalist, with recent experience as a Project Manager, remote Software Development teams and community building activities 🧑‍💻
-             I work as PM at Umvel. Highlights of my career include Aeroméxico, Global Hitss, Optimen... 🚀</Text>
+             <Text w={['50%',null,'70%']} ml={['25%',null,'15%']} pb='15px'>My name is Tobías. I'm a Mexican Aeronautical Engineer, with recent experience as Project Manager of Software Products for remote Software Development teams. 🧑‍💻</Text>
+             <Text w={['50%',null,'70%']} ml={['25%',null,'15%']} pb='15px'>Currently, I work at <Link href='https://umvel.com/' isExternal color='teal.500'>Umvel</Link> as the Project Manager of <Link href='https://www.vivaaerobus.com/' isExternal color='teal.500'>Viva Aerobus official website</Link> and mobile applications for <Link href='https://play.google.com/store/apps/details?id=com.vivaaerobus.app&hl=es&gl=MX' isExternal color='teal.500'>Android</Link> and <Link href='https://apps.apple.com/mx/app/viva-aerobus-vuela/id1563307248' isExternal color='teal.500'>iOS</Link>.</Text>
+             <Text w={['50%',null,'70%']} ml={['25%',null,'15%']} pb='15px'>Highlights of my career include <Link href='https://aeromexico.com/' isExternal color='teal.500'>Aeroméxico</Link>, <Link href='https://globalhitss.com/' color='teal.500' isExternal>Global Hitss</Link> & <Link href='https://optimen.com.mx/' isExternal color='teal.500'>Optimen...</Link> 🚀</Text>
+          
           </Box>
           {isNotDesktop && <Box w='100%' h='fit-content' bg='black' color='gray'  >
             <Flex direction='column' align='center'>
@@ -81,7 +82,7 @@ function App() {
                   <input placeholder="Email" type="email" name="email" autocomplete="off"/>
                   <input placeholder="Subject" type="text" name="subject"/>
                   <textarea placeholder="Message" name="message"></textarea>
-                  <button type="submit" className='hello'>Send</button>
+                  <button type="submit" className='hello'>Send Message</button>
                 </Flex>
               </form>
             </div>
@@ -115,7 +116,7 @@ function App() {
                   </Box>
                   <Box pt='20px'>
                     <Center>
-                      <button type="submit" className='hello'>Send</button>
+                      <button type="submit" className='hello'>Send Message</button>
                     </Center>
                   </Box>
                 </Flex>
