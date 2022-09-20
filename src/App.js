@@ -62,10 +62,10 @@ function App() {
             </Flex>
           </Box>
           <Box w='100%' h='fit-content' bg='#0c0d0d' color='gray' pb='40px'>
-            <Heading as='h1' size='lg' noOfLines={1} ml={['25%',null,'15%']} mt='20px' h='60px'>Hi there!</Heading>
-             <Text w={['50%',null,'70%']} ml={['25%',null,'15%']} pb='15px'>My name is Tobías. I'm a Mexican Aeronautical Engineer, with recent experience as Project Manager of Software Products for remote Software Development teams. 🧑‍💻</Text>
-             <Text w={['50%',null,'70%']} ml={['25%',null,'15%']} pb='15px'>Currently, I work at <Link href='https://umvel.com/' isExternal color='teal.500'>Umvel</Link> as the Project Manager of <Link href='https://www.vivaaerobus.com/' isExternal color='teal.500'>Viva Aerobus official website</Link> and mobile applications for <Link href='https://play.google.com/store/apps/details?id=com.vivaaerobus.app&hl=es&gl=MX' isExternal color='teal.500'>Android</Link> and <Link href='https://apps.apple.com/mx/app/viva-aerobus-vuela/id1563307248' isExternal color='teal.500'>iOS</Link>.</Text>
-             <Text w={['50%',null,'70%']} ml={['25%',null,'15%']} pb='15px'>Highlights of my career include <Link href='https://aeromexico.com/' isExternal color='teal.500'>Aeroméxico</Link>, <Link href='https://globalhitss.com/' color='teal.500' isExternal>Global Hitss</Link> & <Link href='https://optimen.com.mx/' isExternal color='teal.500'>Optimen...</Link> 🚀</Text>
+            <Heading as='h1' size='lg' noOfLines={1} ml={['15%',null,'15%']} mt='20px' h='60px'>Hi there!</Heading>
+             <Text w={['60%',null,'70%']} ml={['15%',null,'15%']} pb='15px'>My name is Tobías. I'm a Mexican Aeronautical Engineer, with recent experience as Project Manager of Software Products for remote Software Development teams. 🧑‍💻</Text>
+             <Text w={['60%',null,'70%']} ml={['15%',null,'15%']} pb='15px'>Currently, I work at <Link href='https://umvel.com/' isExternal color='teal.500'>Umvel</Link> as the Project Manager of <Link href='https://www.vivaaerobus.com/' isExternal color='teal.500'>Viva Aerobus official website</Link> and mobile applications for <Link href='https://play.google.com/store/apps/details?id=com.vivaaerobus.app&hl=es&gl=MX' isExternal color='teal.500'>Android</Link> and <Link href='https://apps.apple.com/mx/app/viva-aerobus-vuela/id1563307248' isExternal color='teal.500'>iOS</Link>.</Text>
+             <Text w={['60%',null,'70%']} ml={['15%',null,'15%']} pb='15px'>Highlights of my career include <Link href='https://aeromexico.com/' isExternal color='teal.500'>Aeroméxico</Link>, <Link href='https://globalhitss.com/' color='teal.500' isExternal>Global Hitss</Link> & <Link href='https://optimen.com.mx/' isExternal color='teal.500'>Optimen...</Link> 🚀</Text>
           
           </Box>
           {isNotDesktop && <Box w='100%' h='fit-content' bg='black' color='gray'  >
