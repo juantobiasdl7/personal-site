@@ -26,7 +26,7 @@ function App() {
         <Flex color='gray' h='50px' align='center' bg='#0c0d0d' w='100%' pos='fixed' zIndex='1'>
           <Link ml='25px' href='https://www.linkedin.com/in/tob%C3%ADas/'>LinkedIn</Link>
           <Link ml='25px' href='https://github.com/juantobiasdl7'>Github</Link>
-          <Link ml='25px' >Blog</Link>
+          <Link ml='25px' >Blog Posts</Link>
         </Flex>
 
         <Flex w='100%' wrap='wrap' pt='120px' bg='black'>
